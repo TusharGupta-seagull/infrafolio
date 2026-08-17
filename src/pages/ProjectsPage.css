@@ -3,6 +3,7 @@
   min-height: 100vh;
 }
 
+/* ── Search Bar ── */
 .projects-search-bar {
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@
   border: none;
   outline: none;
   background: transparent;
-  font-family: var(--font-family);
+  font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
   width: 100%;
@@ -46,6 +47,7 @@
   padding: var(--spacing-16) 0;
 }
 
+/* ── Grid ── */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -65,9 +67,154 @@
   }
 }
 
-.page-glass-card {
-  flex: none; /* override the slider flex properties */
+/* ── New Robust Card Layout ── */
+.projects-page-card {
+  position: relative;
   width: 100%;
-  height: 380px;
-  scroll-snap-align: none;
+  height: 480px; /* Taller height */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  
+  /* Fallback text colors to ensure safety */
+  color: white;
+}
+
+.projects-page-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  color: white; /* Lock it in */
+}
+
+.projects-page-card:hover * {
+  color: inherit;
+}
+
+.projects-page-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Backgrounds ── */
+.projects-page-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #111;
+}
+
+.abstract-gradient-bg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.abstract-gradient-bg.index-0 {
+  background: linear-gradient(135deg, #2c3e50, #000000);
+}
+
+.abstract-gradient-bg.index-1 {
+  background: linear-gradient(135deg, #1a2a6c, #112240);
+}
+
+.abstract-gradient-bg.index-2 {
+  background: linear-gradient(135deg, #3a1c71, #1a1a2e);
+}
+
+/* ── Inner Layout (Flexbox) ── */
+.projects-page-card-inner {
+  position: relative;
+  z-index: 2;
+  flex: 1; /* Takes up all available space above tags */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.projects-page-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-6);
+  flex-shrink: 0;
+}
+
+/* Middle content area pushed to bottom */
+.projects-page-card-content {
+  margin-top: auto; /* Pushes to bottom of flex container */
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.projects-page-card-title {
+  margin-bottom: var(--spacing-2);
+}
+
+/* View project button */
+.projects-page-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  color: white;
+  transition: background-color var(--transition-fast);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  align-self: flex-start;
+}
+
+.projects-page-card:hover .projects-page-view-btn {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Tags Area (At the absolute bottom) ── */
+.projects-page-tags {
+  position: relative;
+  z-index: 3;
+  padding: var(--spacing-3) var(--spacing-6) var(--spacing-4);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  cursor: default;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0; /* Never shrink */
+}
+
+.projects-page-tags::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-page-tag {
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
