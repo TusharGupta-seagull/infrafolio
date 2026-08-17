@@ -1,0 +1,25 @@
+.section {
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
+  width: 100%;
+  scroll-margin-top: var(--header-height);
+}
+
+.section.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.section.bg-surface {
+  background-color: var(--color-bg-surface);
+}
+
+.section.bg-tertiary {
+  background-color: #F1F5F9; /* Subtle slate gray/blue */
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
+  }
+}
