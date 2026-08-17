@@ -20,8 +20,8 @@ export const ProjectsPage: React.FC = () => {
     project.technologies.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  const handleCardClick = (projectId: number) => {
-    navigate(`/projects/${projectId}`);
+  const handleCardClick = (projectSlug: string) => {
+    navigate(`/projects/${projectSlug}`);
   };
 
   return (
@@ -50,10 +50,10 @@ export const ProjectsPage: React.FC = () => {
               <article
                 key={project.id}
                 className="projects-page-card"
-                onClick={() => handleCardClick(project.id)}
+                onClick={() => handleCardClick(project.slug)}
                 role="link"
                 tabIndex={0}
-                onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(project.id); }}
+                onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(project.slug); }}
                 aria-label={`View details for ${project.title}`}
               >
                 <div className="projects-page-card-bg">

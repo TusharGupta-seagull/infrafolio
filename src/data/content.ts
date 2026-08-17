@@ -84,6 +84,7 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    slug: 'vaultpay',
     title: 'VaultPay',
     description: 'Distributed backend system',
     longDescription: 'A secure financial processing backend designed for scale and high availability.',
@@ -94,6 +95,7 @@ export const projects = [
   },
   {
     id: 2,
+    slug: 'env-as-code',
     title: 'Environment-as-Code: Scalable AWS Infrastructure',
     description: 'Infrastructure automation and provisioning',
     longDescription: '– Built production-style AWS infrastructure using reusable Terraform modules for VPC, ALB, Auto Scaling Groups, RDS, S3, Route 53, security groups, and supporting networking components across environments\n– Automated EC2 provisioning and configuration with Ansible using dynamic inventories generated from Terraform outputs, reducing manual setup and keeping server configuration consistent with the deployed infrastructure\n– Designed a secure Jenkins-based CI/CD setup with Jenkins hosted in private subnets, controlled outbound access through NAT gateways, and bastion-based administration for managing production infrastructure',
@@ -101,6 +103,7 @@ export const projects = [
   },
   {
     id: 3,
+    slug: 'container-runtime',
     title: 'Lightweight Container Runtime Built with Bash',
     description: 'Low-level systems engineering',
     longDescription: '– Built a lightweight container runtime in Bash utilizing chroot, Linux namespaces and Btrfs filesystem snapshots\n– Implemented process, network, hostname and filesystem isolation using namespaces and virtual Ethernet pairs\n– Added container image pulling, process execution management and basic CPU and memory resource controls\n– Explored container internals across filesystem isolation, networking, namespaces and runtime lifecycle management',
