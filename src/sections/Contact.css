@@ -1,0 +1,86 @@
+#contact {
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--spacing-16) 0;
+}
+
+.contact-title {
+  margin-bottom: var(--spacing-4);
+}
+
+.contact-desc {
+  margin-bottom: var(--spacing-8);
+}
+
+.contact-btn {
+  margin: 0;
+}
+
+.contact-btn-gmail {
+  background-color: #EA4335;
+  border-color: #EA4335;
+  color: white;
+}
+
+.contact-btn-gmail:hover {
+  background-color: #d33426;
+  border-color: #d33426;
+}
+
+.contact-btn-linkedin {
+  background-color: #0A66C2;
+  border-color: #0A66C2;
+  color: white;
+}
+
+.contact-btn-linkedin:hover {
+  background-color: #0958a8;
+  border-color: #0958a8;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.footer {
+  margin-top: var(--spacing-16);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-8);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.footer-links a {
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    gap: var(--spacing-4);
+    text-align: center;
+  }
+}

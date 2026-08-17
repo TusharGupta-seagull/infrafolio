@@ -1,0 +1,83 @@
+.certs-editorial {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.cert-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cert-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.cert-icon {
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-badge-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.cert-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-border);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.cert-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.cert-link-icon {
+  opacity: 0.6;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.cert-link:hover .cert-link-icon {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+
+.cert-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-provider {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .cert-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+    padding: var(--spacing-4) 0;
+  }
+  .cert-provider {
+    padding-left: calc(40px + var(--spacing-4));
+    text-align: left;
+  }
+}

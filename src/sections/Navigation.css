@@ -1,0 +1,116 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-4) 0;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid transparent;
+}
+
+.nav-scrolled {
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo-link {
+  display: inline-flex;
+}
+
+.nav-logo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  transition: color var(--transition-fast);
+}
+
+.nav-logo-text-animating {
+  color: #008f11 !important; /* Classic dark terminal green */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+.mobile-nav-link {
+  color: var(--color-text-secondary);
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-border);
+}
+
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.nav-icon-link:hover {
+  color: var(--color-text-primary);
+}
+
+.desktop-only {
+  display: none;
+}
+
+.mobile-menu-btn {
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.mobile-divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-border);
+  margin: var(--spacing-2) 0;
+}

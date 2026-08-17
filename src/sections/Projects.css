@@ -1,0 +1,196 @@
+.projects-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--color-accent);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  margin-bottom: var(--spacing-4);
+  opacity: 1;
+  visibility: visible;
+}
+
+.view-all-link:hover {
+  opacity: 0.8;
+}
+
+.view-all-link.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.view-all-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px dashed var(--color-border);
+  box-shadow: none;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.view-all-card:hover {
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-text-secondary);
+}
+
+.view-all-slider-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.view-all-card:hover .view-all-slider-link {
+  color: var(--color-accent);
+}
+
+.view-all-icon {
+  transition: transform var(--transition-fast);
+}
+
+.view-all-card:hover .view-all-icon {
+  transform: translateX(4px);
+}
+
+.projects-glass-slider {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-6);
+  padding-bottom: var(--spacing-16); /* Increased to prevent box-shadow clipping (which causes a hard line) */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-top: var(--spacing-8);
+  scroll-padding-left: calc(max(0px, (100vw - var(--max-width-content)) / 2) + var(--content-padding));
+}
+
+.projects-glass-slider::before,
+.projects-glass-slider::after {
+  content: '';
+  flex: 0 0 calc(max(0px, (100vw - var(--max-width-content)) / 2) + var(--content-padding) - var(--spacing-6));
+}
+
+.projects-glass-slider::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for a cleaner look */
+}
+
+.projects-glass-slider {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  outline: none; /* Prevent focus outline masquerading as a hard line */
+}
+
+.glass-card {
+  position: relative;
+  flex: 0 0 85%;
+  height: 300px;
+  scroll-snap-align: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    flex: 0 0 600px;
+    height: 360px;
+    scroll-snap-align: start;
+  }
+}
+
+.glass-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #111;
+  /* Fallback */
+}
+
+.abstract-gradient-bg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.abstract-gradient-bg.index-0 {
+  background: linear-gradient(135deg, #2c3e50, #000000);
+}
+
+.abstract-gradient-bg.index-1 {
+  background: linear-gradient(135deg, #1a2a6c, #112240);
+}
+
+.abstract-gradient-bg.index-2 {
+  background: linear-gradient(135deg, #3a1c71, #1a1a2e);
+}
+
+.glass-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.glass-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.glass-card-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.glass-card-title {
+  margin-bottom: var(--spacing-2);
+}
+
+.glass-learn-more {
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  color: white;
+  transition: background-color var(--transition-fast);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.glass-learn-more:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,116 @@
+/* ══════════════════════════════════════
+   Skills — asymmetric split layout
+   ══════════════════════════════════════ */
+
+/* Top-level: side-by-side on desktop, stacked on mobile */
+.skills-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .skills-split {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-16);
+  }
+}
+
+/* ── Left column: sticky header ── */
+.skills-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  flex-shrink: 0;
+}
+
+.skills-aside .variant-h2 {
+  margin-top: -0.15em; /* Trim line-height leading to align tops */
+}
+
+@media (min-width: 768px) {
+  .skills-aside {
+    flex: 0 0 240px;
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-8));
+    align-self: flex-start;
+  }
+}
+
+.skills-count {
+  margin-top: var(--spacing-1);
+}
+
+/* ── Right column: multi-column flow ── */
+.skills-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 480px) {
+  .skills-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Individual skill block ── */
+.skills-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+
+
+.skills-block-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills-block-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-tertiary);
+}
+
+.skills-block-label {
+  letter-spacing: 0.06em;
+}
+
+/* ── Item list ── */
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.skills-list-item {
+  position: relative;
+  padding-left: var(--spacing-4);
+  color: var(--color-text-secondary);
+}
+
+.skills-list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 1px;
+  background-color: var(--color-text-tertiary);
+}

@@ -1,0 +1,121 @@
+.impact-section {
+  padding: var(--spacing-8) 0;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+}
+
+.impact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .impact-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-12);
+  }
+}
+
+.impact-label {
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.impact-metrics-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .impact-metrics-inline {
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--spacing-8);
+  }
+}
+
+.impact-metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.metric-value {
+  margin: 0;
+  line-height: 1;
+}
+
+.metric-text {
+  max-width: 150px;
+}
+
+.impact-badges-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push to the right side if there's space */
+  max-width: 100%;
+  overflow-x: auto;
+  /* Prevent vertical clipping by adding padding, then counter-acting with margin */
+  padding: 20px 0;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar for a cleaner look */
+  scrollbar-width: none; 
+}
+.impact-badges-container::-webkit-scrollbar {
+  display: none;
+}
+
+.impact-badges-divider {
+  width: 1px;
+  height: 50px;
+  background-color: var(--color-border);
+  margin-left: var(--spacing-4);
+  margin-right: var(--spacing-6);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .impact-badges-divider {
+    display: block;
+  }
+}
+
+.impact-badges {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  height: 56px; /* Anchor the layout height */
+}
+
+.impact-badge-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin-top: -20px; /* Let it overflow visually without expanding the container */
+  margin-bottom: -20px;
+  overflow: hidden; /* Crop the transparent padding around the Credly badge */
+  transition: transform var(--transition-fast);
+  outline: none;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.impact-badge-link:hover {
+  transform: translateY(-2px);
+}
+
+.impact-badge-img {
+  width: 192px; /* 2x size to zoom in and let the container clip the edges */
+  height: 192px;
+  min-width: 192px;
+  min-height: 192px;
+  object-fit: contain;
+}

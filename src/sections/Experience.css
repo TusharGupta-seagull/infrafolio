@@ -1,0 +1,142 @@
+.section-header {
+  margin-bottom: var(--spacing-12);
+}
+
+.section-header>*:first-child {
+  margin-bottom: var(--spacing-4);
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-12);
+}
+
+.experience-item + .experience-item {
+  margin-top: var(--spacing-16);
+}
+
+.experience-item {
+  display: flex;
+  gap: var(--spacing-8);
+}
+
+.experience-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.experience-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.experience-line {
+  flex-grow: 1;
+  width: 1px;
+  background-color: var(--color-border);
+  margin-top: -4px;
+  margin-bottom: -24px;
+  /* offset the gap */
+  z-index: 1;
+}
+
+.experience-content {
+  flex-grow: 1;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .experience-meta {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--spacing-4);
+  }
+}
+
+.experience-meta h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.experience-company {
+  font-weight: 600;
+}
+
+.experience-desc {
+  max-width: 700px;
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+}
+
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+@media (min-width: 768px) {
+  .experience-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-4);
+  }
+
+  .experience-period {
+    margin-left: auto;
+  }
+}
+
+#experience {
+  position: relative;
+}
+
+.experience-toggle-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(50%);
+  z-index: 10;
+}
+
+.experience-toggle-btn-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.experience-toggle-btn-centered:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
