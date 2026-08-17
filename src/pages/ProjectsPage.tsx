@@ -3,16 +3,25 @@ import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Typography } from '../components/Typography';
 import { projects } from '../data/content';
-import { Search, ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Search, ExternalLink, X } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import './ProjectsPage.css';
 
 export const ProjectsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProjectId(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const filteredProjects = projects.filter(project =>
@@ -20,8 +29,10 @@ export const ProjectsPage: React.FC = () => {
     project.technologies.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  const handleCardClick = (projectSlug: string) => {
-    navigate(`/projects/${projectSlug}`);
+  const selectedProject = projects.find(p => p.id === selectedProjectId);
+
+  const handleCardClick = (projectId: string) => {
+    setSelectedProjectId(projectId);
   };
 
   return (
@@ -50,10 +61,10 @@ export const ProjectsPage: React.FC = () => {
               <article
                 key={project.id}
                 className="projects-page-card"
-                onClick={() => handleCardClick(project.slug)}
-                role="link"
+                onClick={() => handleCardClick(project.id)}
+                role="button"
                 tabIndex={0}
-                onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(project.slug); }}
+                onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(project.id); }}
                 aria-label={`View details for ${project.title}`}
               >
                 <div className="projects-page-card-bg">
@@ -80,10 +91,46 @@ export const ProjectsPage: React.FC = () => {
                       </Typography>
                     </div>
 
-                    <span className="projects-page-view-btn">
-                      <ExternalLink size={13} />
-                      <Typography variant="label" color="inherit">View project</Typography>
-                    </span>
+                    <div className="projects-card-actions">
+                      {project.hashnodeUrl && (
+                        <a 
+                          href={project.hashnodeUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="projects-page-view-btn"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Typography variant="label" color="inherit">Learn more</Typography>
+                          <ExternalLink size={13} />
+                        </a>
+                      )}
+                      
+                      {project.projectUrl && (
+                        <a 
+                          href={project.projectUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="projects-page-view-btn"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Typography variant="label" color="inherit">Project Link</Typography>
+                          <ExternalLink size={13} />
+                        </a>
+                      )}
+
+                      {project.githubUrl && (
+                        <a 
+                          href={project.githubUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="projects-page-view-btn github-circle-btn"
+                          onClick={(e) => e.stopPropagation()}
+                          aria-label="View on GitHub"
+                        >
+                          <FaGithub size={16} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -105,6 +152,76 @@ export const ProjectsPage: React.FC = () => {
           )}
         </Container>
       </Section>
+
+      {/* ── Project Modal ── */}
+      {selectedProject && (
+        <div className="project-modal-overlay" onClick={() => setSelectedProjectId(null)}>
+          <div 
+            className="project-modal-content glass-card"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button className="project-modal-close" onClick={() => setSelectedProjectId(null)} aria-label="Close modal">
+              <X size={20} />
+            </button>
+            
+            <Typography variant="h2" style={{ marginBottom: 'var(--spacing-4)' }}>
+              {selectedProject.title}
+            </Typography>
+            
+            <div className="project-modal-tags">
+              {selectedProject.technologies.map(tech => (
+                <span key={tech} className="projects-page-tag modal-tag">{tech}</span>
+              ))}
+            </div>
+
+            <div className="project-modal-body">
+              <Typography variant="body" style={{ whiteSpace: 'pre-line' }}>
+                {selectedProject.longDescription}
+              </Typography>
+            </div>
+            
+            <div className="project-modal-actions">
+              {selectedProject.hashnodeUrl && (
+                <a 
+                  href={selectedProject.hashnodeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="projects-page-view-btn"
+                >
+                  <Typography variant="label" color="inherit">Learn more</Typography>
+                  <ExternalLink size={13} />
+                </a>
+              )}
+
+              {selectedProject.projectUrl && (
+                <a 
+                  href={selectedProject.projectUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="projects-page-view-btn"
+                >
+                  <Typography variant="label" color="inherit">Project Link</Typography>
+                  <ExternalLink size={13} />
+                </a>
+              )}
+              
+              {selectedProject.githubUrl && (
+                <a 
+                  href={selectedProject.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="projects-page-view-btn github-circle-btn"
+                  aria-label="View on GitHub"
+                >
+                  <FaGithub size={16} />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "role": "Associate System Engineer",
+    "company": "IBM",
+    "period": "Present",
+    "description": "Automated enterprise release workflows and built CI/CD pipelines with integrated test automation to accelerate delivery at scale.",
+    "technologies": ["CI/CD", "Jenkins", "Salesforce", "Release Management", "Automation Testing"]
+  },
+  {
+    "id": 2,
+    "role": "DevOps Engineer Intern",
+    "company": "NowNow Digital Systems Limited",
+    "period": "Past",
+    "description": "Administered core AWS infrastructure serving 100K+ users, optimized cloud spend by $10K/month, and automated CI/CD pipelines enabling 20+ weekly production releases.",
+    "technologies": ["AWS", "EC2", "RDS", "VPC", "Jenkins", "Spring Boot", "AWS CLI", "Cost Optimization", "Microsoft 365"]
+  },
+  {
+    "id": 3,
+    "role": "DevOps Intern",
+    "company": "THE OPSWORK",
+    "period": "Past",
+    "description": "Provisioned Kubernetes infrastructure via Terraform and engineered a centralized observability stack utilizing Prometheus, Thanos, and Grafana for distributed clusters.",
+    "technologies": ["Kubernetes", "Terraform", "Prometheus", "Thanos", "Grafana", "Loki", "Tempo"]
+  }
+]

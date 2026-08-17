@@ -1,0 +1,9 @@
+[
+  { "category": "Cloud Providers", "items": ["AWS"] },
+  { "category": "Containers & Orchestration", "items": ["Docker", "Kubernetes", "EKS"] },
+  { "category": "Infrastructure as Code", "items": ["Terraform"] },
+  { "category": "CI/CD", "items": ["Jenkins"] },
+  { "category": "Observability", "items": ["Prometheus", "Grafana", "Loki", "Tempo", "Thanos"] },
+  { "category": "OS & Scripting", "items": ["Linux", "Bash"] },
+  { "category": "Development", "items": ["Java", "Spring Boot"] }
+]

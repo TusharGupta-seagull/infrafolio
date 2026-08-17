@@ -1,0 +1,12 @@
+{
+  "hashnodeLink": "https://hashnode.com",
+  "hashnodeFlag": true,
+  "projectLink": "https://example.com",
+  "projectLinkFlag": true,
+  "githubLink": "https://github.com",
+  "githubLinkFlag": true,
+  "skills": "AWS, Terraform, Docker",
+  "title": "VaultPay",
+  "shortDescription": "Distributed backend system",
+  "longDescription": "A secure financial processing backend designed for scale and high availability.\n\nTraditional payment backends face severe scaling bottlenecks and security vulnerabilities when processing high-throughput transactions under burst loads.\n\nMicroservices architecture deployed on a managed Kubernetes cluster, utilizing a highly available PostgreSQL cluster for ACID-compliant transactions, and Redis for a high-speed caching layer.\n\nEngineered robust CI/CD pipelines using Jenkins and Terraform to provision infrastructure as code. This approach reduced manual deployment errors to zero and ensured 100% environment consistency across staging and production."
+}

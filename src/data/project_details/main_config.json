@@ -1,0 +1,17 @@
+[
+  {
+    "rank": 1,
+    "keySkill": "AWS",
+    "projectCode": "vaultpay"
+  },
+  {
+    "rank": 2,
+    "keySkill": "Terraform",
+    "projectCode": "env-as-code"
+  },
+  {
+    "rank": 3,
+    "keySkill": "Bash",
+    "projectCode": "container-runtime"
+  }
+]

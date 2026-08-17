@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "value": "100K+",
+    "label": "Users On System",
+    "description": "Maintained high availability for large-scale application workloads."
+  },
+  {
+    "id": 2,
+    "value": "$10K/mo",
+    "label": "AWS Cost Savings",
+    "description": "Optimized cloud infrastructure and resource allocation."
+  }
+]

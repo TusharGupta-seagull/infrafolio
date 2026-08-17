@@ -1,0 +1,12 @@
+{
+  "hashnodeLink": "https://hashnode.com",
+  "hashnodeFlag": true,
+  "projectLink": "https://example.com",
+  "projectLinkFlag": false,
+  "githubLink": "https://github.com",
+  "githubLinkFlag": true,
+  "skills": "Terraform, Ansible, Jenkins, AWS, Bash, Java",
+  "title": "Environment-as-Code: Scalable AWS Infrastructure",
+  "shortDescription": "Infrastructure automation and provisioning",
+  "longDescription": "– Built production-style AWS infrastructure using reusable Terraform modules for VPC, ALB, Auto Scaling Groups, RDS, S3, Route 53, security groups, and supporting networking components across environments\n– Automated EC2 provisioning and configuration with Ansible using dynamic inventories generated from Terraform outputs, reducing manual setup and keeping server configuration consistent with the deployed infrastructure\n– Designed a secure Jenkins-based CI/CD setup with Jenkins hosted in private subnets, controlled outbound access through NAT gateways, and bastion-based administration for managing production infrastructure"
+}

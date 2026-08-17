@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "AWS Certified CloudOps Engineer – Associate",
+    "issuer": "Amazon Web Services",
+    "url": "https://www.credly.com/badges/5f1e9fb5-b915-43ad-93c4-003629bb543d/public_url",
+    "image": "/images/cloudops.png"
+  },
+  {
+    "id": 2,
+    "name": "AWS Certified Solutions Architect – Associate",
+    "issuer": "Amazon Web Services",
+    "url": "https://www.credly.com/badges/c2df4fb9-8c4a-43b8-8750-1a587389489f/public_url",
+    "image": "/images/solutions-architect.png"
+  },
+  {
+    "id": 3,
+    "name": "HashiCorp Certified: Terraform Associate",
+    "issuer": "HashiCorp",
+    "url": "https://www.credly.com/badges/4424a681-7efb-44d4-8f98-3978a6fd8aa0/public_url",
+    "image": "/images/terraform.png"
+  },
+  {
+    "id": 4,
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "url": "https://www.credly.com/badges/af87ad7e-e0b9-491d-b8e4-b8f3125def88/public_url",
+    "image": "/images/cloud-practitioner.png"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "hashnodeLink": "https://hashnode.com",
+  "hashnodeFlag": true,
+  "projectLink": "https://example.com",
+  "projectLinkFlag": false,
+  "githubLink": "https://github.com",
+  "githubLinkFlag": true,
+  "skills": "Bash, Linux, Vagrant",
+  "title": "Lightweight Container Runtime Built with Bash",
+  "shortDescription": "Low-level systems engineering",
+  "longDescription": "– Built a lightweight container runtime in Bash utilizing chroot, Linux namespaces and Btrfs filesystem snapshots\n– Implemented process, network, hostname and filesystem isolation using namespaces and virtual Ethernet pairs\n– Added container image pulling, process execution management and basic CPU and memory resource controls\n– Explored container internals across filesystem isolation, networking, namespaces and runtime lifecycle management"
+}
