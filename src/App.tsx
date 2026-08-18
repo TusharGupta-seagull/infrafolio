@@ -3,6 +3,7 @@ import { Navigation } from './sections/Navigation';
 import { Contact } from './sections/Contact';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Contact />
       </div>
